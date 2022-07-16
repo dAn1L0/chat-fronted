@@ -1,13 +1,34 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+
+img {
+  @apply max-w-full;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+textarea {
+  @apply border-solid border-0 resize-none w-full outline-none overflow-hidden;
 }
+
+@tailwind components;
+.login100-form-title {
+  @apply block text-3xl text-center uppercase w-full text-[#403866] leading-tight;
+}
+
+.input100 {
+  @apply block w-full px-6 py-4 h-16 text-xl font-normal text-gray-700 bg-[#e6e6e6] bg-clip-padding border border-solid border-[#e6e6e6] rounded transition ease-in-out m-0 focus:text-[#311c44] focus:bg-[#e6e6e6] focus:border-0 focus:border-b-2  focus:border-b-[#9b48ff] focus:outline-0  
+}
+
+.txt1 {
+  @apply text-base text-[#827ffe] leading-tight focus:text-[#403866] outline-none;
+}
+
+.login100-form-btn {
+  @apply bg-[#827ffe] ease-in-out duration-75 rounded-sm flex items-center leading-tight justify-center h-16 text-base py-0 px-5 text-white uppercase w-full hover:bg-[#403866] disabled:bg-gray-400 focus:outline-[#403866];
+}
+
+.active_chat {
+  @apply bg-[#d8d8d8];
+}
+.time_date {
+  @apply text-[#747474] block text-xs mt-2 mx-0 mb-0
+}
+@tailwind utilities;
