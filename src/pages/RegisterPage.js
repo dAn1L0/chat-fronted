@@ -28,9 +28,9 @@ export const RegisterPage = () => {
     e.preventDefault()
 
     const resp = await register(form.name,form.email,form.password)
-
-    if (!resp.ok) {
-      Swal.fire('Error', resp.msg, 'error')
+    const pase = resp?.ok
+    if (!pase !== undefined && resp?.msg !== undefined) {
+      Swal.fire('Error', resp?.msg, 'error')
     }
   }
 

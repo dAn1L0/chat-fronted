@@ -12,12 +12,12 @@ export const AuthRouter = () => {
           <Routes>
             <Route
               exact
-              path='/login'
+              path='auth/login'
               element={<LoginPage/>}
             />
             <Route
               exact
-              path='/register'
+              path='auth/register'
               element={<RegisterPage/>}
             />
             <Route
