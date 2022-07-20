@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { AuthContext } from '../auth/AuthContext'
 import { LoadingScreen } from '../components/LoadingScreen'
 import { ChatPage } from '../pages/ChatPage'
@@ -35,11 +35,17 @@ export const ChatRouter = () => {
           }
         />
         <Route 
-          path='/*'
+          path='auth/*'
           element={
             <PublicRoute isAuthenticated={auth.logged}>
               <AuthRouter/>
             </PublicRoute>
+          }
+        />
+        <Route
+          path='*'
+          element={
+            <Navigate to='auth/login' />
           }
         />
       </Routes>
